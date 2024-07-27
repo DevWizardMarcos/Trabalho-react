@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: black;
+    color: #f7f7f7;
+  }
+  
+  h1 {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Bakbak One';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  h4 {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #450808;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 27px;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+    background-image: url(../css/tes.jpg);
+    background-size: cover; /* Altera para cover */
+    background-position: center; /* Adiciona para centralizar a imagem */
+    background-repeat: no-repeat;
+   /* clip-path: circle(50% at center);  Arredonda a imagem de fundo */
+
+  }
+  
+  .card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:hover .cardImage {
+    transform: scale(1.1);
+  }
+  .cardImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden; /* Adiciona essa propriedade para evitar que a imagem vaze */
+  }
+  
+  .cardImage img {
+    width: 100%; /* Ajusta a largura da imagem para 100% do container */
+    height: 100%; /* Ajusta a altura da imagem para 100% do container */
+    object-fit: cover; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Mantém o arredondamento da imagem */
+  }
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
+  }
