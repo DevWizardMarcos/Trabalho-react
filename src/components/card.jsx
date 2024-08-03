@@ -11,4 +11,11 @@ function Card({title, image}) {
 }
 
 
+
+document.querySelectorAll('.cardImage').forEach(image => {
+    image.addEventListener('click', () => {
+      image.classList.toggle('clicked');
+    });
+  });
+
 export default Card

@@ -3,6 +3,17 @@ import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/userContext'
 
 
+
+
+
+
+
+
+
+
+
+
+
 function LoginForm() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -40,10 +51,32 @@ function LoginForm() {
             
         };
 
-
+        function App() {
+            return (
+              <div className="App">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  id="background-video"
+                  src="your-video-file.mp4"
+                  type="video/mp4"
+                />
+                {/* Restante do conteúdo da página */}
+              </div>
+            );
+          }
 
 	return(
+
+
+
+
+
+
+        
         <div class="form-container">
+            
         <div class="card-wrapper">
             <div class="animated-card">
                 <div class="card-inner front">
@@ -78,6 +111,8 @@ function LoginForm() {
 
 	)
 }
+
+
 
 
 export default LoginForm

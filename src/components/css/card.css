@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+
+html{
+  background-image: url(../css/teste1.jpg);
+  background-size: 150px auto;
+}
+
+
+
+
 body {
   background-color: black;
   color: #f7f7f7;
@@ -45,14 +54,34 @@ h4 {
   background-position: center;
   background-repeat: no-repeat;
 }
-
-.card:hover {
-  transform: translateY(-20px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+.card:hover{
+  margin-right: 120px;
 }
 
-.card:hover .cardImage {
-  transform: scale(1.1);
+.card {
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: translateX(50px) rotate(90deg);
+  box-shadow: 50px 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.card:not(:hover) {
+  animation: voltar 0.5s;
+}
+
+@keyframes voltar {
+  0% {
+    transform: translateX(50px) rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.card:hover.cardImage {
+  transform: scale(1.1) translateY(-80px); 
 }
 
 .cardImage {
@@ -72,6 +101,55 @@ h4 {
   border-radius: 50%;
 }
 
+.cardImage:hover {
+  animation: rotate 2s linear infinite;
+}
+
+
+
+
+
+
+.cardImage.clicked {
+  animation: none;
+  animation-play-state: paused;
+  animation: stopRotate 0.5s forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(400deg);
+  }
+}
+
+@keyframes stopRotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+.cardImage:hover {
+  animation: rotate 2s linear infinite;
+}
+
+.cardImage.clicked {
+  animation: stopRotate 0.5s forwards;
+}
+
+
+
+
+
+
+
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
@@ -79,8 +157,6 @@ h4 {
   justify-content: center;
   padding: 40px;
 }
-
-/* Novo código CSS */
 .form-container {
   display: flex;
   justify-content: center;
@@ -124,6 +200,53 @@ h4 {
   background-color: #450808;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  background-image: url(../css/test.png);
+  background-size: 150px auto; /* diminui a imagem para 150px de largura */
+  background-position: center;
+  background-repeat: no-repeat; /* evita que a imagem se repita */
+  animation: pulando 2s infinite; /* adiciona a animação */
+  
+}
+
+@keyframes pulando {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.card-inner.front:hover {
+  background-color: #5C0011;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.card-inner.front::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-image: url(https://i.pinimg.com/564x/16/38/ac/1638ac8….jpg);
+  background-size: cover;
+  border-radius: 50%;
+
+}
+
+
+
+
+.card-inner.front:hover::before {
+  transform: scale(1);
 }
 
 .card-inner.back {
@@ -176,3 +299,7 @@ input:focus {
 .submit-button:hover {
   background-color: #450808;
 }
+
+
+
+
