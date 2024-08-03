@@ -43,21 +43,39 @@ function LoginForm() {
 
 
 	return(
-		<div>
-            <form onSubmit={(event) => handleSubmit(event)}>
-                <input type="email" placeholder="Email" 
-                onChange={ ({ target }) => handleEmail(target) }
-                value={email}
-                name='email'
-                required/>
-                <input type="password" placeholder="Senha" 
-                value={senha}
-                name='password'
-                onChange={ ({ target }) => handleSenha(target) }
-                required/>
-                <button type="submit">Entrar</button>
-            </form>
+        <div class="form-container">
+        <div class="card-wrapper">
+            <div class="animated-card">
+                <div class="card-inner front">
+                    
+                </div>
+                <div class="card-inner back">
+                    <form onSubmit={(event) => handleSubmit(event)} class="login-form">
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            onChange={({ target }) => handleEmail(target)}
+                            value={email}
+                            name="email"
+                            required
+                            class="form-input"
+                        />
+                        <input
+                            type="password"
+                            placeholder="Senha"
+                            value={senha}
+                            name="password"
+                            onChange={({ target }) => handleSenha(target)}
+                            required
+                            class="form-input"
+                        />
+                        <button type="submit" class="submit-button">Entrar</button>
+                    </form>
+                </div>
+            </div>
         </div>
+    </div>
+
 	)
 }
 

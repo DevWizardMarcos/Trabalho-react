@@ -33,16 +33,24 @@
     border: 1px solid #ccc;
   }
   
+
+
+
+
   button {
     width: 100%;
     padding: 10px;
     background-color: #333;
-    color: #fff;
+    color: #282828e4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
+
   
   button:hover {
     background-color: #444;
   }
+
+
+  

@@ -51,10 +51,19 @@ function HeroInputField() {
                 <option disabled={selected}>Selecione a categoria</option>
                 { options.length > 0 ? 
                 options.map((element) => (
-                    <option >{element.strCategory}</option>
+                    <option>{element.strCategory}</option>
                 )): <option>Erro!</option> }
             </select>
-            <button disabled={!selected} onClick={fetchRecipeCategory}>Pesquisar</button>
+            <button disabled= {!selected}
+
+            style={{
+                padding: '5px',
+                margin: '5px',
+                borderRadius: '4px'
+            }}
+            
+            
+            onClick={fetchRecipeCategory}>Pesquisar</button>
         </div>
 	)
 }

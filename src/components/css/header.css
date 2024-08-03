@@ -2,11 +2,12 @@ nav {
     background-color: darkcyan;
     display: flex;
     justify-content: space-between;
-    width: 98%;
+    width: 100%;
     position: fixed;
     padding: 8px;
     left: 0;
     top: 0;
+    display: none;
 }
 
 .login-field {

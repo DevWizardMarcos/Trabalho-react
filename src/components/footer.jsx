@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
 	return(
 			<div>
-				<p>Oshiro 2024</p>
+				<p>Dev Wizard 2024</p>
 			</div>
     )
 }
