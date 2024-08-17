@@ -59,9 +59,17 @@ h4 {
 }
 
 .card:hover {
-  margin-right: 120px;
+  margin-right: 40px;
   transform: translateX(50px) rotateY(180deg); /* Adiciona o efeito de flip */
   box-shadow: 50px 0 40px rgba(0, 0, 0, 0.2);
+  
+
+}
+
+
+
+.card:hover h4 {
+  display: none;
 }
 
 .card:not(:hover) {
@@ -77,7 +85,118 @@ h4 {
   }
 }
 
+.cardButton {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: #7C7B6A;
+  color: #ffff;
+  border: none;
+  padding: 22px;
+  margin: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0; /* Inicialmente, o botão é invisível */
+  transition: opacity 0.5s; /* Animação para aparecer o botão */
+  background-image: url('../css/test.png');
+  background-size: 52px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: pulo 2s infinite; /* Adicione a animação de pulo */
+}
 
+@keyframes pulo {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #450808;
+  padding: 88px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 79%;
+  height: 85%;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content button {
+  padding: 9px;
+  margin: 4px;
+  border-radius: 8px;
+  background: rgb(179, 174, 104);
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 83%;
+  left: 48%;
+
+
+}
+
+.modal-content button:hover {
+  background-color: #6B0000;
+  padding: 22px;
+  margin: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0; /* Inicialmente, o botão é invisível */
+  transition: opacity 0.5s; /* Animação para aparecer o botão */
+  background-image: url('../css/test.png');
+  background-size: 52px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: pulo 2s infinite; /* Adicione a animação de pulo */
+}
+
+
+
+
+
+
+
+
+
+
+.card:hover .cardButton {
+  opacity: 1; /* Quando o card estiver com a classe :hover, o botão aparece */
+}
+
+
+
+.card:hover .cardButton {
+  opacity: 1; /* Quando o card estiver com a classe :hover, o botão aparece */
+}
 
 
 
