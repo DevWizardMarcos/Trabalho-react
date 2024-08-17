@@ -37,6 +37,7 @@ h4 {
   font-size: 10px;
 }
 
+
 .card {
   display: flex;
   flex-direction: column;
@@ -45,26 +46,21 @@ h4 {
   background-color: #450808;
   padding: 20px;
   width: 200px;
+  height: 300px; /* Defina uma altura fixa para o card */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   border-radius: 27px;
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out;
+  transform-style: preserve-3d; /* Necessário para animações 3D */
+  transition: transform 0.5s, box-shadow 0.5s, margin-right 0.5s;
   background-image: url(../css/tes.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-.card:hover{
-  margin-right: 120px;
-}
-
-.card {
-  transform: rotate(0deg);
-  transition: transform 0.5s;
+  position: relative; /* Necessário para o efeito de flip */
 }
 
 .card:hover {
-  transform: translateX(50px) rotate(90deg);
+  margin-right: 120px;
+  transform: translateX(50px) rotateY(180deg); /* Adiciona o efeito de flip */
   box-shadow: 50px 0 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -74,12 +70,17 @@ h4 {
 
 @keyframes voltar {
   0% {
-    transform: translateX(50px) rotate(90deg);
+    transform: translateX(50px) rotateY(180deg); /* A rotação inicial para voltar */
   }
   100% {
-    transform: rotate(0deg);
+    transform: translateX(50px) rotateY(0deg); /* Finaliza a rotação */
   }
 }
+
+
+
+
+
 .card:hover.cardImage {
   transform: scale(1.1) translateY(-80px); 
 }
@@ -92,6 +93,7 @@ h4 {
   margin-bottom: 20px;
   transition: transform 0.5s ease-in-out;
   overflow: hidden;
+  perspective: 1000px; /* Adiciona profundidade para o efeito de rotação 3D */
 }
 
 .cardImage img {
@@ -99,7 +101,13 @@ h4 {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
 }
+
+.cardImage:active img {
+  transform: rotateX(90deg) translateY(-10px) translateX(10px);
+}
+
 
 .cardImage:hover {
   animation: rotate 2s linear infinite;
@@ -107,6 +115,7 @@ h4 {
 
 
 
+/* ROTAÇÃO */
 
 
 
@@ -117,12 +126,14 @@ h4 {
   animation-fill-mode: forwards;
 }
 
+
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(400deg);
+    transform: rotate(100deg);
   }
 }
 
@@ -166,12 +177,9 @@ h4 {
   background-color: transparent;
   border-radius: 20px;
   position: relative;
-}
-
-.card-wrapper {
+}.card-wrapper {
   perspective: 1000px;
 }
-
 .animated-card {
   width: 300px;
   height: 200px;
@@ -180,11 +188,9 @@ h4 {
   transition: transform 0.6s;
   transform: rotateY(0deg);
 }
-
 .animated-card:hover {
   transform: rotateY(180deg);
 }
-
 .card-inner {
   position: absolute;
   width: 100%;
@@ -195,19 +201,18 @@ h4 {
   align-items: center;
   text-align: center;
 }
-
 .card-inner.front {
   background-color: #450808;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   background-image: url(../css/test.png);
-  background-size: 150px auto; /* diminui a imagem para 150px de largura */
+  background-size: 150px auto;
   background-position: center;
-  background-repeat: no-repeat; /* evita que a imagem se repita */
-  animation: pulando 2s infinite; /* adiciona a animação */
-  
+  background-repeat: no-repeat;
+  animation: pulando 2s infinite;
 }
+
 
 @keyframes pulando {
   0% {

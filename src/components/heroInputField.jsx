@@ -57,9 +57,15 @@ function HeroInputField() {
             <button disabled= {!selected}
 
             style={{
-                padding: '5px',
-                margin: '5px',
-                borderRadius: '4px'
+                padding: '9px',
+                margin: '4px',
+                borderRadius: '8px',
+                background: '#B3AE68',
+                color: '#ffff',
+                fontSize: '14px',
+
+
+                
             }}
             
             
